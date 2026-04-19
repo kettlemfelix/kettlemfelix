@@ -10,16 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- VARIÁVEIS DE COR E ESTILO --- */
         :root {
-            --bg-color: #ccd5ae;
-            --card-bg: #e9edc9; 
-            --accent-color: #4a352a;
-            --text-light: #4a352a;
-            --text-muted: #4a352a;
+            --bg-color: #e9ecef;
+            --card-bg: #84a59d; 
+            --accent-color: #84a59d;
+            --text-light: #f7f7ff;
+            --text-muted: #212529;
         }
 
-        /* --- RESET BÁSICO --- */
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +32,6 @@
             line-height: 1.6;
         }
 
-        /* --- ANIMAÇÕES DE SCROLL (FADE IN) --- */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -47,7 +44,6 @@
             transform: translateY(0);
         }
 
-        /* --- HERO SECTION --- */
         .hero {
             position: relative;
             text-align: center;
@@ -76,7 +72,7 @@
             left: 0;
             width: 100%;
             height: 65%;
-            background: linear-gradient(to bottom, rgba(44, 30, 24, 0) 0%, #ccd5ae 100%);
+            background: linear-gradient(to bottom, rgba(44, 30, 24, 0) 0%, #e9ecef 100%);
             pointer-events: none;
         }
 
@@ -93,6 +89,7 @@
             font-size: 3.5rem;
             margin-bottom: 5px;
             font-weight: normal;
+            color: #5F8279;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.6); 
         }
 
@@ -101,16 +98,19 @@
             font-size: 1.1rem;
             max-width: 500px;
             margin: 0 auto;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+            color: #5F8279;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
 
-        /* --- SOBRE MIM --- */
         .about-me {
             max-width: 700px;
             margin: 0 auto;
             padding: 40px 20px 60px;
             text-align: center;
             font-size: 1.1rem;
+        }
+        .about-me p {
+            color: #212529;
         }
 
         .about-me h2 {
@@ -120,7 +120,6 @@
             color: var(--accent-color);
         }
 
-        /* --- CARDS SECTION --- */
         .cards-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -144,12 +143,12 @@
         .card-content {
             display: flex;
             flex-direction: column;
-            height: 100%; /* Faz o conteúdo preencher todo o card */
+            height: 100%; 
         }
 
         .card:hover {
             transform: translateY(-5px);
-            background: rgba(188, 153, 131, 0.3); 
+            background: #b1ccc6; 
         }
 
         .card-content h2 {
@@ -163,19 +162,18 @@
             font-size: 0.9rem;
             color: var(--text-muted);
             margin-bottom: 20px;
-            flex-grow: 1; /* Ocupa todo o espaço vazio central, empurrando os botões pro fundo */
+            flex-grow: 1; 
         }
 
-        /* Container para alinhar os botões lado a lado, ou um embaixo do outro se faltar espaço */
         .btn-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: auto; /* Trava o bloco de botões na base do card */
+            margin-top: auto; 
         }
 
         .btn-saiba {
-            background: #d4a373;
+            background: #da2c38;
             color: var(--text-light);
             padding: 8px 16px;
             border-radius: 25px;
@@ -185,7 +183,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px; /* Espaço entre o ícone e o texto */
+            gap: 8px; 
             transition: background 0.3s ease;
         }
 
@@ -194,14 +192,12 @@
             color: var(--bg-color);
         }
 
-        /* Classe para os ícones dentro dos botões */
         .btn-icon {
             width: 18px;
             height: 18px;
             object-fit: contain;
         }
 
-        /* Responsividade dos Cards */
         @media (max-width: 950px) {
             .cards-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -219,7 +215,6 @@
             }
         }
 
-        /* --- FAQ SECTION --- */
         .faq {
             padding: 0 20px 60px;
             max-width: 700px;
@@ -235,13 +230,14 @@
         }
 
         .faq-item {
-            border-bottom: 1px solid rgba(188, 153, 131, 0.5);
+            border-bottom: 1px solid #84a59d;
             padding: 20px 0;
             cursor: pointer;
         }
 
         .faq-question {
             display: flex;
+            color: #84a59d;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
@@ -251,18 +247,19 @@
         .faq-question span {
             font-size: 1.5rem;
             font-weight: 300;
-            transition: transform 0.3s ease; /* Anima o sinal de + girando */
+            transition: transform 0.3s ease;
         }
 
         .faq-item.active .faq-question span {
-            transform: rotate(45deg); /* Transforma o + em um X quando aberto */
+            transform: rotate(45deg); 
         }
 
-        /* A estrutura oculta da resposta */
         .faq-answer-wrapper {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease; /* Animação de abrir/fechar */
+            transition: max-height 0.4s ease;
+            text-align: left;
+            position: sticky;
         }
 
         .faq-answer-inner {
@@ -272,7 +269,6 @@
             padding-bottom: 5px;
         }
 
-        /* --- CTA (Call to Action) --- */
         .cta-container {
             text-align: center;
             padding: 0 20px 60px;
@@ -296,7 +292,6 @@
             box-shadow: 0 5px 15px rgba(188, 153, 131, 0.4);
         }
 
-        /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -310,7 +305,7 @@
 
     <header class="hero fade-in">
         <div class="hero-image-wrapper">
-            <img src="kettlem.png" alt="Foto de Perfil" class="hero-img-large">
+            <img src="assets/images/kettlem2.png.png" alt="Foto de Perfil" class="hero-img-large">
             <div class="hero-fade"></div>
         </div>
         
@@ -333,10 +328,10 @@
                 <p>Conheça um pouco da minha trajetória acadêmica e profissional.</p>
                 <div class="btn-group">
                     <a href="https://www.linkedin.com/in/kettlemfelix/" target="_blank" class="btn-saiba">
-                        <img src="linkedinicon.png" alt="" class="btn-icon"> LinkedIn
+                        <img src="assets/images/linkedinicon.png" alt="" class="btn-icon"> LinkedIn
                     </a>
                     <a href="http://lattes.cnpq.br/8689142912610704" target="_blank" class="btn-saiba">
-                        <img src="lattesicon.png" alt="" class="btn-icon"> Lattes
+                        <img src="assets/images/lattesicon.png" alt="" class="btn-icon"> Lattes
                     </a>
                 </div>
             </div>
@@ -347,7 +342,7 @@
                 <h2>Abordagem Clínica</h2>
                 <p>Saiba como funcionam as sessões e de que maneira as intervenções são planejadas para o seu desenvolvimento.</p>
                 <div class="btn-group">
-                    <a href="#" class="btn-saiba">Saiba mais ></a>
+                    <a href="about.html" class="btn-saiba">Saiba mais ></a>
                 </div>
             </div>
         </div>
@@ -358,10 +353,10 @@
                 <p>Estou à disposição para dúvidas ou agendamentos. Escolha o canal de sua preferência e vamos conversar. E-mail: kettlem.hub@gmail.com</p>
                 <div class="btn-group">
                     <a href="https://wa.me/message/XOZ7SMDIAIXLA1" target="_blank" class="btn-saiba">
-                        <img src="whatsicon.png" alt="" class="btn-icon"> WhatsApp
+                        <img src="assets/images/whatsicon.png" alt="" class="btn-icon"> WhatsApp
                     </a>
                     <a href="https://www.instagram.com/psikettlem?igsh=aDVzeGVlbjNjcmJx&utm_source=qr" target="_blank" class="btn-saiba">
-                        <img src="instaicon.png" alt="" class="btn-icon"> Instagram
+                        <img src="assets/images/instaicon.png" alt="" class="btn-icon"> Instagram
                     </a>
                 </div>
             </div>
@@ -373,7 +368,7 @@
                 <p>Consulte minha habilitação profissional e registro ativo junto ao Conselho Federal de Psicologia para um atendimento ético e seguro.</p>
                 <div class="btn-group">
                     <a href="https://cadastro.cfp.org.br/" target="_blank" class="btn-saiba">
-                        <img src="psiicon.png" alt="" class="btn-icon"> Consulte aqui
+                        <img src="assets/images/psiicon.png" alt="" class="btn-icon"> Consulte aqui
                     </a>
                 </div>
             </div>
@@ -384,7 +379,7 @@
                 <h2>Avaliação Neuropsicológica | Psicopedagógica</h2>
                 <p>Investigação clínica das funções cognitivas, emocionais e comportamentais para auxiliar no diagnóstico e planejamento de intervenções.</p>
                 <div class="btn-group">
-                    <a href="#" class="btn-saiba">Saiba como funciona ></a>
+                    <a href="aboutneuro.html" class="btn-saiba">Saiba como funciona ></a>
                 </div>
             </div>
         </div>
@@ -403,7 +398,7 @@
 
     </main>
 
-    <section class="faq fade-in">
+    <section class="about-me fade-in">
         <h2>Dúvidas Frequentes</h2>
         
         <div class="faq-item">
@@ -436,15 +431,10 @@
     </section>
 
     <div class="cta-container fade-in">
-        <a href="#" class="cta-button">QUERO MAIS INFORMAÇÕES</a>
+        <a href="https://wa.me/message/XOZ7SMDIAIXLA1" class="cta-button">QUERO MAIS INFORMAÇÕES</a>
     </div>
 
-    <footer>
-        <p>Todos os direitos reservados por: Jéssica Felix ©.</p>
-    </footer>
-
     <script>
-        // 1. Lógica do Accordion (FAQ)
         document.querySelectorAll('.faq-item').forEach(item => {
             const question = item.querySelector('.faq-question');
             
@@ -452,13 +442,11 @@
                 const answerWrapper = item.querySelector('.faq-answer-wrapper');
                 const isOpen = item.classList.contains('active');
 
-                // Fecha todas as outras opções abertas suavemente (opcional, mas recomendado)
                 document.querySelectorAll('.faq-item').forEach(otherItem => {
                     otherItem.classList.remove('active');
                     otherItem.querySelector('.faq-answer-wrapper').style.maxHeight = null;
                 });
 
-                // Se a clicada não estava aberta, abre ela pegando a altura real (scrollHeight)
                 if (!isOpen) {
                     item.classList.add('active');
                     answerWrapper.style.maxHeight = answerWrapper.scrollHeight + "px";
@@ -466,23 +454,21 @@
             });
         });
 
-        // 2. Lógica das Animações de Scroll (Fade In)
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.15 // 15% do elemento precisa estar na tela para animar
+            threshold: 0.15 
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Faz a animação acontecer apenas uma vez
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Seleciona tudo que tem a classe .fade-in e coloca o observador
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
