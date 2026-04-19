@@ -200,8 +200,8 @@
     content: '';
     position: absolute;
     top: 0;
-    right: 275;
-    width: 35%; 
+    left: 0;
+    width: 25%;
     height: 100%;
     background: linear-gradient(to right, var(--cream) 5%, transparent 100%);
     z-index: 2; 
@@ -442,6 +442,34 @@
     }
     .forwhom-header {
       position: static;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 80px;
+    }
+
+    .hero-right { display: flex; padding: 0 0 0 24px; }
+    
+    .hero-right::after { 
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      background: 
+        linear-gradient(to top, var(--cream) 5%, transparent 25%),
+        linear-gradient(to bottom, var(--cream) 0%, transparent 20%);
+    }
+
+    .hero-right::before {
+      width: 15%;
+    }
+
+    .hero-photo { max-height: 50vh; }
+
+    .about, .howworks-inner, .tcc-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
   }
 

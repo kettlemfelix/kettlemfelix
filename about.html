@@ -443,6 +443,19 @@
     .forwhom-header {
       position: static;
     }
+
+    /* blur de baixo */
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    bottom: 0px; 
+    left: 0;
+    width: 100%;
+    height: 15%; 
+    background: linear-gradient(to top, var(--cream) 30%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+  }
   }
 
   /* HOW IT WORKS */
